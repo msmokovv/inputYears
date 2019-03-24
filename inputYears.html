@@ -1,0 +1,51 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>FE1 JS1 Ex6</title>
+</head>
+<body>
+	<input type="text" id="inputName" value="Miroslav" />
+	<input type="number" id="age" value="24" />
+	<input type="button" value="Run" onclick="showMyAge();" />
+	<div style="border:1px solid black;" id="resultDiv"></div>
+	
+	<script>
+		 function showMyAge() {
+			 var inputName = document.getElementById("inputName").value;
+			 console.log(inputName);
+			 
+			 var inputAge = document.getElementById("age").value;
+			 console.log(inputAge);
+			 
+			 var thisYear = prompt("Enter This Year", 2019);
+			 console.log(thisYear);
+		 
+		if(thisYear != null){
+				if(!isNaN(thisYear)){
+					var boldName = confirm("Bold name?");
+					console.log(boldName);
+
+					var result = "";
+
+					if(boldName == true){
+						result = '<b>' + inputName + '<b>';
+						}else{
+							result = inputName;
+						}
+
+					result = result + ', Born:' + (thisYear - inputAge);
+					document.getElementById('resultDiv').innerHTML = result;
+				}else{
+					alert('currentYear must be valid');
+				}
+				
+		}else{
+				alert('You must enter Year');
+			}
+					
+				
+			
+		}
+	</script>
+</body>
+</html>
